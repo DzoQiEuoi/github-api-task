@@ -1,0 +1,19 @@
+.centralise {
+    text-align: center;
+    > * {
+        margin: 8px;
+    }
+}
+
+.resultList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.resultItem {
+    font-size: 18px;
+    margin: 8px 0;
+    display: flex;
+    justify-content: space-between;
+}

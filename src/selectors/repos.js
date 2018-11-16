@@ -1,0 +1,1 @@
+export const byFullName = (state, fullName) => state[fullName];

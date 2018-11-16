@@ -1,0 +1,42 @@
+{
+  "name": "github-api-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "10.0.0",
+    "npm": "5.6.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DzoQiEuoi/github-api-task.git"
+  },
+  "author": "Thomas Byers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DzoQiEuoi/github-api-task/issues"
+  },
+  "homepage": "https://github.com/DzoQiEuoi/github-api-task#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.10.3",
+    "sass": "^1.14.3"
+  },
+  "dependencies": {
+    "parse-link-header": "^1.0.1",
+    "postcss-modules": "^1.4.1",
+    "react": "^16.7.0-alpha.0",
+    "react-dom": "^16.7.0-alpha.0",
+    "react-redux": "^5.1.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "sanitize-html": "^1.19.1",
+    "showdown": "^1.9.0",
+    "uri-template": "^1.0.1"
+  }
+}
