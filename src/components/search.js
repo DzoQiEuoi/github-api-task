@@ -11,35 +11,37 @@ import styles from './search.scss';
 const Search = ({ search, more, results, isMore }) => {
     const [searchTerm, updateSearchTerm] = useState('');
 
-    return [
-        <div key="search-bar" className={styles.centralise}>
-            <TextInput
-                placeholder="Search for a repository..."
-                value={searchTerm}
-                onChange={updateSearchTerm} />
-            <Button onClick={() => search(`${searchTerm} in:name`)}>
-                Search
-            </Button>
-        </div>,
-        <ul key="result-list" className={styles.resultList}>
-            { results.map(result => 
-                <li key={result.id} className={styles.resultItem}>
-                    <Link to={{ pathname: `/repo/${result.full_name}` }}>
-                        <Button>{result.full_name}</Button>
-                    </Link>
-                    <InfoBox>
-                        &#x2B50;&nbsp;{result.stargazers_count}
-                    </InfoBox>
-                </li>
-            )}
-        </ul>,
-        <div key="more" className={styles.centralise}>
-            { isMore
-                ? <Button onClick={more}>more</Button>
-                : null
-            }
-        </div>
-    ];
+    return (
+        <React.Fragment>
+            <div key="search-bar" className={styles.centralise}>
+                <TextInput
+                    placeholder="Search for a repository..."
+                    value={searchTerm}
+                    onChange={updateSearchTerm} />
+                <Button onClick={() => search(`${searchTerm} in:name`)}>
+                    Search
+                </Button>
+            </div>
+            <ul key="result-list" className={styles.resultList}>
+                { results.map(result => 
+                    <li key={result.id} className={styles.resultItem}>
+                        <Link to={{ pathname: `/repo/${result.full_name}` }}>
+                            <Button>{result.full_name}</Button>
+                        </Link>
+                        <InfoBox>
+                            &#x2B50;&nbsp;{result.stargazers_count}
+                        </InfoBox>
+                    </li>
+                )}
+            </ul>
+            <div key="more" className={styles.centralise}>
+                { isMore
+                    ? <Button onClick={more}>more</Button>
+                    : null
+                }
+            </div>
+        </React.Fragment>
+    );
 }
 
 const mapStateToProps = state => ({

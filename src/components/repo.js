@@ -12,21 +12,21 @@ const Repo = ({ owner, name, repo, readme, getRepo, getReadme}) => {
     useEffect(() => getRepo(owner, name), []);
     useEffect(() => repo && getReadme(repo), [repo]);
 
-    return [
-        repo
-            ? (
+    return (
+        <React.Fragment>
+            { !repo ? null :
                 <div key="details" className={styles.details}>
                     <h2>{repo.full_name}</h2>
                     <InfoBox>Open Issues: {repo.open_issues_count}</InfoBox>
                     <InfoBox>Forks: {repo.forks_count}</InfoBox>
                     <InfoBox>Stars: {repo.stargazers_count}</InfoBox>
                 </div>
-            )
-            : null,
-        readme
-            ? <Readme key="readme" readme={readme} />
-            : null
-    ];
+            }
+            { !readme ? null :
+                <Readme key="readme" readme={readme} />
+            }
+        </React.Fragment>
+    );
 };
 
 const mapStateToProps = (state, ownProps) => {
